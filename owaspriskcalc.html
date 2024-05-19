@@ -68,6 +68,12 @@
                         $(".LS").text("Score: O "+LS+" ("+risk+")");
                         $(".likelihood"+risk).addClass("selectedRisk");
                         MS = $(".likelihood"+risk).parent();
+
+                        // Quick Fix, need to rewrite whole script.
+                        if(risk == 'Critical') {
+                            $(".likelihoodHigh").addClass("selectedRisk");
+                            MS = $(".likelihoodHigh").parent();
+                        }
                         
                         var IST = 0;
                         
@@ -121,7 +127,13 @@
                                 Skills required
                             </div>
                             <div class="col-md-8">
-                                <select id="LF0" name="LF0"><option value="0">Not Applicable [0]</option><option value="1">Security penetration skills [1]</option><option value="3">Network and programmaing skills [3]</option><option value="4">Advanced computer user [4]</option><option value="6">Some technical skills [6]</option><option value="9">No technical skills [9]</option></select>
+                                <select id="LF0" name="LF0">
+                                    <option value="9">No technical skills [1]</option>
+                                    <option value="6">Some technical skills [3]</option>
+                                    <option value="4">Advanced computer user [5]</option>
+                                    <option value="3">Network and programmaing skills [6]</option>
+                                    <option value="1">Security penetration skills [9]</option>
+                                </select>       
                             </div>
                         </div>
                         <div class="row cRow">
